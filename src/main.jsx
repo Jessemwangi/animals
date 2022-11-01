@@ -5,10 +5,34 @@ import AnimalCard from './Cards';
 class Main extends React.Component{
     state ={
         AllAnimals : animals
+        
     }
-  addLike = (e) =>{
-console.log('this is clicked');
-this.setState({likes : this.likes + 1})
+  
+  addLike = (name,likes,e) =>{
+  console.log(name,likes,e.target)
+this.setState({
+    // likes : this.state.AllAnimals.filter(x => x.name === name).map(x => x.likes )
+ 
+})
+    }
+
+      animalsearch = async myStr =>{
+        if (myStr.length > 0){
+            const newarray =
+         this.state.AllAnimals.filter(animal => {
+          return animal.name.trim().toUpperCase().includes(myStr.trim().toUpperCase());
+        });
+        this.setState({
+            AllAnimals : newarray
+        })
+    
+       
+    }
+    else{
+        this.setState({
+            AllAnimals : animals
+        })
+    }
     }
     render()
     {
@@ -16,19 +40,18 @@ this.setState({likes : this.likes + 1})
             return (
             <AnimalCard key={animal.name} 
             name={animal.name}
-            likes = {animal.likes}
-            
-            >
-                <button like = {'Add A Like'} cliked = {this.addLike}></button>
+            likes = {animal.likes}>              
+                <button onClick={(e) => this.addLike(animal.name,animal.likes, e)}>Add Like </button>
             </AnimalCard>
             );
+
         });
-        console.log(animals);
+
     return(
         <div className='search'>
              {this.state.AllAnimals.length} animals
         <br></br>
-        <input type="text" name="" id="" />
+        <input onKeyUp= {(e) => this.animalsearch(e.target.value)} type="text" name="" id=""/>
        <div className='main'>
        
         {animalsList}

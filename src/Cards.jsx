@@ -6,13 +6,13 @@ const AnimalCard = (props) =>{
 <div className={mycss.cardContainer}>
     <div className="imagetop">
         <span onClick = {props.CloseMe}>&#10060;</span>
-        <img src={`https://source.unsplash.com/500x400/?${props.name}`} alt="" srcset="" />
+        <img src={`https://source.unsplash.com/500x400/?${props.name}`} alt={props.name}  />
     </div>
     <div>
         <div><h3>{props.name}</h3></div>
         <div>
             <span >&#10083;{props.likes}</span>
-            <button onClick = {props.cliked}> {props.children}</button>
+             {props.children}
         </div>
         
 
