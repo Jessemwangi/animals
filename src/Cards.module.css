@@ -1,0 +1,13 @@
+.cardContainer
+{
+    display:flex;
+    flex-direction: column;
+    background-color: darkgrey;
+    margin:1rem;
+    padding: 1rem;
+}
+.imagetop{
+    width: 150x;
+    height:150px;
+    position: relative;
+}
