@@ -10,8 +10,9 @@ const AnimalCard = (props) =>{
     </div>
     <div>
         <div><h3>{props.name}</h3></div>
-        <div>
-            <span >&#10083;{props.likes}</span>
+        <div className={mycss.likeSection}>
+            {/* <span >{props.likes}</span> */}
+
              {props.children}
         </div>
         

@@ -21,3 +21,15 @@ code {
 {
   width: 100%;
 }
+.unfoundSearch{
+  text-align: center;
+  width: 100%;
+  background-color: brown;
+  color: white;
+}
+.mainBtn{
+background-color: transparent;
+outline: none;
+border: none;
+font-size: 20px;
+}
