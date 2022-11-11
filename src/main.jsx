@@ -5,8 +5,7 @@ import AnimalCard from './Cards';
 class Main extends React.Component{
     state ={
         AllAnimals : animals,
-        searchValue : '',
-        dislikes: 0
+        searchValue : ''
     }
   
   addLike = (index,name,likesm,em) =>{
@@ -35,6 +34,46 @@ class Main extends React.Component{
         })
     }
 
+    removeLike = (e,name)=>{
+        this.setState((state) =>{
+           
+            const newAnimalList = state.AllAnimals.map(animal => {
+                  if (animal.name === name) {
+                     return (
+                      {...animal, likes : animal.likes +1}
+                      );
+                     
+                  }
+                else
+                {
+                  return animal;
+                }
+          });return {AllAnimals : newAnimalList};
+  
+          });
+       
+
+    }
+
+    addDislike(name){
+        const newAnimals = this.state.AllAnimals.map((animal) => {
+          if(animal.name === name){
+            if(animal.dislike){
+              animal.dislike ++;
+            }
+            else {
+              animal.dislike = 1;
+            }
+          return animal;
+          }
+          else {
+            return animal;
+          }
+        });
+        this.setState({ animals: newAnimals });
+        
+      }
+
     animalsearch = async myStr =>{
     if (myStr.length > 0){
         const newarray =
@@ -56,10 +95,12 @@ sechrchTwo = (e) =>{
        searchValue : e
 
     });
+
 }
 
     render()
     {
+        console.log(this.state.AllAnimals);
         const searchAnimal =
         this.state.AllAnimals.filter(animal => {
         return animal.name.trim().toUpperCase().includes(this.state.searchValue.trim().toUpperCase());
@@ -75,7 +116,8 @@ if (searchAnimal.length > 0){
                 CloseMe ={()=>this.removeCard(animal.name)} >
                             
                 <button className='mainBtn' onClick={(e) => this.addLike(index,animal.name,animal.likes, e)}>&#10083; {animal.likes} &#x1F44D;</button>
-                <button className='mainBtn' onClick={(e) => this.removeLike(index,animal.name,animal.likes, e)}>&#xe023; {animal.dislikes} &#x1F44E;</button> 
+                <button className='mainBtn' value='10' onClick={() => this.addDislike(animal.name)}>dis</button> 
+                <span>{animal.dislike? animal.dislike : 0}</span>
                 </AnimalCard>
             );
 
