@@ -1,8 +1,8 @@
-import React from 'react'
-import animals from './animals'
+import React from 'react';
+import animals from './animals';
 import AnimalCard from './Cards';
 
-class Main extends React.Component{
+class Animal extends React.Component{
     state ={
         AllAnimals : animals,
         searchValue : ''
@@ -146,4 +146,4 @@ return <div className='unfoundSearch'><h3>No animals matches you search</h3> </d
     }
 }
 
-export default Main;
+export default Animal;
