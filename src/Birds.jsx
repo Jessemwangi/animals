@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {birds} from './animals';
-import AnimalCard from './Cards';
+import AnimalCard from './AnimalCards';
 
 class Birds extends Component {
 
@@ -33,27 +33,6 @@ class Birds extends Component {
         this.setState({
             AllBirds : newarray
         })
-    }
-
-    removeLike = (e,name)=>{
-        this.setState((state) =>{
-           
-            const newBirdList = state.AllAnimals.map(bird => {
-                  if (bird.name === name) {
-                     return (
-                      {...bird, likes : bird.likes +1}
-                      );
-                     
-                  }
-                else
-                {
-                  return bird;
-                }
-          });return {AllBirds : newBirdList};
-  
-          });
-       
-
     }
 
     addDislike(name){
@@ -128,7 +107,7 @@ return <div className='unfoundSearch'><h3>No Birds matches you search</h3> </div
     }
 
     return(
-        <div>
+        <div className='loadingRegion'>
         <div className='search'>
         {this.state.AllBirds.length} Birds
         <br></br>

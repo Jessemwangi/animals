@@ -1,6 +1,6 @@
 import React from 'react';
 import animals from './animals';
-import AnimalCard from './Cards';
+import AnimalCard from './AnimalCards';
 
 class Animal extends React.Component{
     state ={
@@ -32,27 +32,6 @@ class Animal extends React.Component{
         this.setState({
             AllAnimals : newarray
         })
-    }
-
-    removeLike = (e,name)=>{
-        this.setState((state) =>{
-           
-            const newAnimalList = state.AllAnimals.map(animal => {
-                  if (animal.name === name) {
-                     return (
-                      {...animal, likes : animal.likes +1}
-                      );
-                     
-                  }
-                else
-                {
-                  return animal;
-                }
-          });return {AllAnimals : newAnimalList};
-  
-          });
-       
-
     }
 
     addDislike(name){
@@ -116,8 +95,8 @@ if (searchAnimal.length > 0){
                 CloseMe ={()=>this.removeCard(animal.name)} >
                             
                 <button className='mainBtn' onClick={(e) => this.addLike(index,animal.name,animal.likes, e)}>&#10083; {animal.likes} &#x1F44D;</button>
-                <button className='mainBtn' value='10' onClick={() => this.addDislike(animal.name)}>dis</button> 
-                <span>{animal.dislike? animal.dislike : 0}</span>
+                <button className='mainBtn' value='10' onClick={() => this.addDislike(animal.name)}>&#x1F44E; {animal.dislike? animal.dislike : 0}</button> 
+                <span></span>
                 </AnimalCard>
             );
 
@@ -128,12 +107,14 @@ return <div className='unfoundSearch'><h3>No animals matches you search</h3> </d
     }
 
     return(
-        <div>
+        <div className='AppMainBody' >
         <div className='search'>
+          <p>
         {this.state.AllAnimals.length} animals
+          </p>
         <br></br>
         {/* <input onKeyUp= {(e) => this.animalsearch(e.target.value)} type="text" name="" id=""/> */}
-        <input onKeyUp= {(e) => this.sechrchTwo(e.target.value)} type="text" name="" id=""/>
+        <input onKeyUp= {(e) => this.sechrchTwo(e.target.value)} type="text" name="" id=""/><label htmlFor="">&#9997;</label>
         </div>
        <div className='main'>
        

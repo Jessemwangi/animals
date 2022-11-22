@@ -11,16 +11,52 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.loadingRegion 
+{
+  display: flex;
+  flex-direction: column;
+}
+
 .main{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  
+  justify-content: space-evenly;
 }
 .search
 {
   width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid green 3px;
 }
+
+.search > p{
+  margin-right: 3rem;
+  font-weight: 900;
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.search > input{
+  height: 25px;
+  width: 20vw;
+  border-right: none;
+  border-radius: 3px 0px 0px 3px;
+}
+
+.search > label{
+  font-size: 24px;
+  height: 27px;
+border: solid black;
+border-left: none;
+border-radius: 0px 3px 3px 0px;
+}
+
 .unfoundSearch{
   text-align: center;
   width: 100%;
@@ -32,4 +68,10 @@ background-color: transparent;
 outline: none;
 border: none;
 font-size: 20px;
+}
+a:active{
+  border: 4px double #fffefe;
+}
+.AppMainBody{
+
 }

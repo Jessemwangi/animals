@@ -1,13 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import './Navbar.css';
 
 const Narbar = () => {
     return (
         <header>
-            <Link to={'/'}>Home</Link>
-            <Link to={'/animals'}>Animals</Link>
-            <Link to={'/birds'}>Birds</Link>
-            <Link to={'/about'}>About</Link>
+            <NavLink className='link' to={'/'}>Home</NavLink>
+            <NavLink className='link' to={'/animals'}>Animals</NavLink>
+            <NavLink className='link' to={'/birds'}>Birds</NavLink>
+            <NavLink className='link' to={'/about'}>About</NavLink>
         </header>
     );
 };

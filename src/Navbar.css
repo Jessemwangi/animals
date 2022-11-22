@@ -1,0 +1,19 @@
+.link{
+    text-decoration: none;
+    color:red;
+    display: inline-block;
+    width: 100px;
+    padding: 2rem;
+    text-align: center;
+}
+.link:hover{
+    border: 4px double #fffefe;
+}
+
+header{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

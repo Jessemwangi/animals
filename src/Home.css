@@ -1,0 +1,41 @@
+.home{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5rem;
+}
+
+.mainlanding{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;   
+}
+
+.homeCard{
+    border-radius: 3px solid black;
+    width: 40%;
+    height: 55vh;
+    text-align: center;
+    box-shadow: 3px 3px 12px black;
+    background-size: cover;
+    text-decoration: none;
+    color:white;
+    font-size: 32px;
+    font-weight: 900;
+}
+.homeCard:hover{
+    transform: scale(0.9);
+    
+}
+
+.animalsCard{
+    background: url('https://source.unsplash.com/500x400/?lion') no-repeat center;
+    background-size: cover;
+    
+}
+
+.birdsCard{
+    background: url('https://source.unsplash.com/500x400/?hawk') no-repeat center;
+    background-size: cover;
+}
