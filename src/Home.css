@@ -12,8 +12,11 @@
     width: 100%;   
 }
 
+
+
 .homeCard{
     border-radius: 3px solid black;
+
     width: 40%;
     height: 55vh;
     text-align: center;
@@ -28,6 +31,17 @@
     transform: scale(0.9);
     
 }
+
+.homeCard > div > h2
+{
+    background: black;
+    opacity: 0.7;
+    text-align: left;
+    width: fit-content;
+    padding: 8px;
+    border-right: solid 4px green;
+}
+
 
 .animalsCard{
     background: url('https://source.unsplash.com/500x400/?lion') no-repeat center;
