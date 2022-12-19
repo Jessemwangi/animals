@@ -79,7 +79,6 @@ sechrchTwo = (e) =>{
 
     render()
     {
-        console.log(this.state.AllAnimals);
         const searchAnimal =
         this.state.AllAnimals.filter(animal => {
         return animal.name.trim().toUpperCase().includes(this.state.searchValue.trim().toUpperCase());
@@ -95,7 +94,8 @@ if (searchAnimal.length > 0){
                 CloseMe ={()=>this.removeCard(animal.name)} >
                             
                 <button className='mainBtn' onClick={(e) => this.addLike(index,animal.name,animal.likes, e)}>&#10083; {animal.likes} &#x1F44D;</button>
-                <button className='mainBtn' value='10' onClick={() => this.addDislike(animal.name)}>&#x1F44E; {animal.dislike? animal.dislike : 0}</button> 
+                <button className='mainBtn' value='10' onClick={() => this.addDislike(animal.name)}>&#x1F44E; 
+                {animal.dislike? animal.dislike : 0}</button> 
                 <span></span>
                 </AnimalCard>
             );

@@ -6,6 +6,7 @@ import Home from './Home';
 import Birds from './Birds';
 import About from './About';
 import NotFoound from './NotFoound';
+import Footer from './Footer';
 function App() {
   return (
     <BrowserRouter>
@@ -22,7 +23,9 @@ function App() {
         <Route path='*' element={<NotFoound/>}></Route>
       </Routes>
       </div>
-      
+      <div>
+      <Footer/>
+      </div>
     </div>
     </BrowserRouter>
   );

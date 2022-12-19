@@ -79,7 +79,6 @@ sechrchTwo = (e) =>{
 }
 
     render() {
-        console.log(this.state.AllAnimals);
         const searchBirds=
         this.state.AllBirds.filter(bird => {
         return bird.name.trim().toUpperCase().includes(this.state.searchValue.trim().toUpperCase());
@@ -107,12 +106,13 @@ return <div className='unfoundSearch'><h3>No Birds matches you search</h3> </div
     }
 
     return(
-        <div className='loadingRegion'>
+        <div className='AppMainBody'>
         <div className='search'>
-        {this.state.AllBirds.length} Birds
+          <p> {this.state.AllBirds.length} Birds</p>
+        
         <br></br>
         {/* <input onKeyUp= {(e) => this.animalsearch(e.target.value)} type="text" name="" id=""/> */}
-        <input onKeyUp= {(e) => this.sechrchTwo(e.target.value)} type="text" name="" id=""/>
+        <input onKeyUp= {(e) => this.sechrchTwo(e.target.value)} type="text" name="" id=""/><label htmlFor="">&#9997;</label>
         </div>
        <div className='main'>
        {birdysList}
