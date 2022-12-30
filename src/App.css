@@ -2,7 +2,7 @@
     display: flex;
     padding: 3rem 0 3rem 0;
     flex-direction: column;
-
+    background-color: #ede7927f;
 }
 a.active{
     border: 5px double #fffefe;
